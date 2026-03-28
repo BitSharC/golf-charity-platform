@@ -32,6 +32,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
 
+        <Route path="/signup" element={<Signup />} />
+
         {/* Exclusive Admins Routes */}
         <Route element={<AdminRoute />}>
           <Route path="/admin" element={<AdminDashboard />} />
