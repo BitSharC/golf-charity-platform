@@ -14,6 +14,21 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-0 w-full z-50 px-4 md:px-6 py-4"
     >
+      <div className="flex items-center gap-4">
+  <Link 
+    to="/login" 
+    className="text-gray-400 hover:text-white transition-colors"
+  >
+    Login
+  </Link>
+  
+  <Link 
+    to="/signup" 
+    className="bg-white text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-all"
+  >
+    Join the Network
+  </Link>
+</div>
       <div className="max-w-7xl mx-auto glass rounded-full px-4 md:px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           {/* Logo - abstract geometric replacing golf ball */}

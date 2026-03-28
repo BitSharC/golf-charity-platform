@@ -8,6 +8,7 @@ import AdminDashboard from './components/AdminDashboard';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
+import Signup from './components/Signup';
 
 function Home() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/charities" element={<CharitiesPage />} />
         <Route path="/login" element={<Login />} />
-        
+
         {/* Authenticated Subscriber Routes */}
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
