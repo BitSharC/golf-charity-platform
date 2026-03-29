@@ -71,6 +71,25 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  useEffect(() => {
+  // 1. Get initial session
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    setUser(session?.user ?? null);
+    setLoading(false);
+  });
+
+  // 2. Listen for changes
+  const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    setUser(session?.user ?? null);
+    setLoading(false);
+  });
+
+  // 3. THIS IS THE CRUCIAL PART TO PREVENT LOCK ERRORS
+  return () => {
+    subscription.unsubscribe();
+  };
+}, []);
+
   const value = {
     user,
     role,

@@ -19,6 +19,8 @@ function Home() {
   );
 }
 
+console.log("URL IS:", import.meta.env.VITE_SUPABASE_URL);
+
 function App() {
   return (
     <div className="min-h-screen bg-bg-deep relative w-full selection:bg-emerald-500/30 selection:text-emerald-100">
